@@ -163,5 +163,35 @@ $ git add readme.txt
 
 
 
-### 3.4  哈哈哈哈哈哈哈
+### 3.4  版本回退
+
+> 你不断对文件进行修改，然后不断提交修改到版本库里，就好比玩RPG游戏时，每通过一关就会自动把游戏状态存盘，如果某一关没过去，你还可以选择读取前一关的状态。有些时候，在打Boss之前，你会手动存盘，以便万一打Boss失败了，可以从最近的地方重新开始。Git也是一样，每当你觉得文件修改到一定程度的时候，就可以“保存一个快照”，这个快照在Git中被称为`commit`。一旦你把文件改乱了，或者误删了文件，还可以从最近的一个`commit`恢复，然后继续工作，而不是把几个月的工作成果全部丢失。
+
+- 查看所有文件版本
+
+```bash
+$ git log   # 由上到下为新版本--老版本 commit：版本号 author:作者 Date：提交日期 最后一行为我们在comit -m 指令后写的版本信息
+```
+
+![1564498086897](C:\Users\Amstrong\AppData\Roaming\Typora\typora-user-images\1564498086897.png)
+
+如果我们需要精简显示版本日志：
+
+```bash
+$ git log --pretty=oneline  # 以单行精简模式显示
+```
+
+![1564498261745](C:\Users\Amstrong\AppData\Roaming\Typora\typora-user-images\1564498261745.png)
+
+- 版本回退
+
+`--hard` 参数的含义后面会说明
+
+```bash
+$ git reset --hard <版本号>
+# 版本号的常用格式：
+# 1. 回退一个版本：head^
+# 2. 回退2个版本：head^^
+# 3. 回退多个版本：head~100
+```
 
