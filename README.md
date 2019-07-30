@@ -66,7 +66,7 @@ sudo apt-get install git
 
 
 
-### 3.1 
+### 3.1 全局配置
 
 - 在本机上全局配置用户名
 
@@ -80,5 +80,75 @@ $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 ```
 
+### 3.2 创建版本库
+
+- 初始化版本库
+
+> 版本库又名仓库，英文名**repository**，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。
+
+```bash
+$ git init
+Initialized empty Git repository in F:/A-Python学习教程/Git使用文档/.git/
+```
+
+- 添加文件到版本库（可以同时add 多个文件）
+
+```bash
+$ git add README.md README1.md
+```
+
+- 提交文件更改
+
+```bash
+$ git commit -m <message>  # commit 命令会自动提交所有add到版本库中的文件
+```
+
+> ![1564495328535](C:\Users\Amstrong\AppData\Roaming\Typora\typora-user-images\1564495328535.png)
+>
+> 简单解释一下`git commit`命令，`-m`后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。
+>
+> 嫌麻烦不想输入`-m "xxx"`行不行？确实有办法可以这么干，但是强烈不建议你这么干，因为输入说明对自己对别人阅读都很重要。实在不想输入说明的童鞋请自行Google，我不告诉你这个参数。
+>
+> `git commit`命令执行成功后会告诉你，`1 file changed`：1个文件被改动（我们新添加的readme.txt文件）；`84 insertions`：插入了84行内容（readme.md有84行内容）。
+
+### 3.3 文件修改后提交版本
+
+- 查看当前版本库中的文件状态
+
+```bash
+$ git status
+```
+
+> ![1564495711807](C:\Users\Amstrong\AppData\Roaming\Typora\typora-user-images\1564495711807.png)
+>
+> `git status`命令可以让我们时刻掌握仓库当前的状态，上面的命令 **modified** 输出告诉我们，`README.md`被修改过了，但还没有准备提交的修改。
+
+- 查看文件修改内容
+
+```bash
+$ git diff
+```
+
+> ![1564495828621](C:\Users\Amstrong\AppData\Roaming\Typora\typora-user-images\1564495828621.png)
+>
+> `git diff`顾名思义就是查看difference，显示的格式正是Unix通用的diff格式，`---`表示相对于上一版本删除的内容，`+++`表示当前版本相比上一版本增加的内容，可以从上面的命令输出看到文件修改的内容。
+
+- 提交新版本
+
+提交修改和提交新文件是一样的两步：
+
+1. 第一步是`git add`
+
+```bash
+$ git add readme.txt
+```
+
+2. 第二步是`git commit -m <说明内容>`
 
 
+
+> 我们再来对比下，这些操作之间，如果我们查看版本库状态分别显示的内容：
+>
+> ###### 1. 编辑文件但是没有add
+>
+> 
