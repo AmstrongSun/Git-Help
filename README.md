@@ -270,6 +270,8 @@ $ git diff --cached    #是暂存区(stage)和分支(master)的比较
 
 ### 3.6 撤销修改
 
+- 场景1：
+
 ```bash
 $ git checkout -- readme.txt  # -- 符号很重要，没有这个 -- 指令含义不是撤销修改的意思了，而是变成了切换到另外一个分支的命令
 ```
@@ -280,5 +282,5 @@ $ git checkout -- readme.txt  # -- 符号很重要，没有这个 -- 指令含�
 >
 > 一种是`readme.txt`已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
 >
-> 总之，就是让这个文件回到最近一次`git commit`或`git add`时的状态。
+> 总之，就是让这个文件回到最近一次`git commit` 或 `git add` 时的状态。
 
