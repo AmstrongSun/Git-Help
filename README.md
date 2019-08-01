@@ -468,30 +468,42 @@ $ git clone git@github.com:shi-baoshun/shibaoshun.git
 >
 > 现在有了分支，就不用怕了。你创建了一个属于你自己的分支，别人看不到，还继续在原来的分支上正常工作，而你在自己的分支上干活，想提交就提交，直到开发完毕后，再一次性合并到原来的分支上，这样，既安全，又不影响别人工作。
 
-### 5.2  创建并切换分支
+### 5.2  分支管理常用指令
+
+#### （1）查看分支
 
 ```bash
-$ git branch dev   # 创建分支
-$ git checkout dev # 切换分支至 dev
+$ git branch   # 会列出所有分支，当前分支前面会标一个*号
 ```
 
-上述两句可以简写为以下形式：
+#### （2）创建分支
 
 ```bash
-$ git checkout -b dev # 创建并切换至分支 dev
+$ git branch <name>
 ```
 
-如果想要查看当前的所有分支：
+#### （3）切换分支
 
 ```bash
-$ git branch  # 会列出所有分支，当前分支前面会标一个*号
+$ git checkout <name>
 ```
 
-![1564645587202](assets/1564645587202.png)
-
-### 5.3 合并分支
+#### （4）创建并切换分支
 
 ```bash
-$ git merge dev
+$ git checkout -b <name>  # 相当于（2）+（3）
+```
+
+#### （5）合并某分支到当前分支
+
+```bash
+$ git checkout master  #一般都是合并到主分支master，所以一般都是先切换至主分支
+$ git merge <name>  
+```
+
+#### （6）删除分支
+
+```bash
+$ git branch -d <name>
 ```
 
